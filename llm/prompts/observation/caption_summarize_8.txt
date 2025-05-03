@@ -1,0 +1,27 @@
+###Task###
+Provide descriptions of observations in 8 directions from the current streetscape location, requiring that the descriptions of observations in the 8 directions be summarized into a 4 direction (left, front, right and back) generalization. The summary should be very brief, include only things in the direction, and not describe things.
+Your Answer must be strictly formatted as follows:
+Left, <landmarks>.
+Front, <landmarks>.
+Right, <landmarks>.
+Rear, <landmarks>.
+
+###Observations###
+Observations in the left rear direction:
+{}
+Observations in the left direction:
+{}
+Observations in the left front direction:
+{}
+Observations directly front:
+{}
+Observations in the right front direction:
+{}
+Observations in the right direction:
+{}
+Observations in the right rear direction:
+{}
+Observations directly rear:
+{}
+
+###Answer###

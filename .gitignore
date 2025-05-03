@@ -1,6 +1,2 @@
-vln/
-llm/
 datasets/touchdown/
-run_multi_agent.py
-task_standardizing.py
-get_task.py
+LLaVA/

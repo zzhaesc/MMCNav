@@ -1,0 +1,42 @@
+### Task Description ###
+Given a Records of decision-making and observation information during the Task, and the corresponding Current Task descriptions, determine if the Current Task is complete?
+
+### Note ###
+The following principles must be followed when determining whether a Current Task is complete:
+1. T-intersection is equivalent to 3-way intersection and intersection is equivalent to all types of intersection. Intersections are equipped with lights, so the observation of 'Intersection Information' in the "Records of decision-making and observation information during the Task" is equivalent to the observation of light.
+2. Due to the error of visual observation, it is impossible to give accurate 'Landmark Information', but the 'Intersection Information' is certain, so the judgment of whether the task is accomplished or not should be based solely on the 'Intersection Information', and the information of landmarks mentioned in the task only additionally increases the credibility of the judgment. 'Landmark Information' should never be confused with 'Intersection Information'.
+3. "Observations at the current location" provides a description of observations in eight directions from the current location to supplement the information; Information about intersections or stoplights mentioned in the "Observations at the current location" cannot be used as a basis for judgment.
+4. When the "Current Task" is "Task 1" and a reorientation is needed, the completion of the subtask entirely depends on whether the first action in the "Records of decision-making and observation information during the Task" has been executed, regardless of what the action is. Key Note: The first sentence in the "Records of decision-making and observation information during the Task" is a description of the initial state and does not indicate any executed actions. The first action should come after 'step 1'. If 'step 1' is not found, it indicates that no actions have been executed and the current task is incomplete.
+5. Tasks that require a left turn, right turn, or turn_around must have a corresponding action STEP(left, right, or turn_around) in the "Records of decision-making and observation information during the Task" in order to be considered as completed, and 'Landmark Information' does not need to be used as a reference.
+6. Attention! Because the intersection (or light) observed in "Observations at the current location" may be far away, tasks related to intersections (lights or corners) must be documented in accordance with the "Record of Decisions and Observation Information During the Task" in 'Intersection Information' in the "Record of Decisions and Observations During the Task" to determine if they have been completed. 
+7. For tasks "Go(walk) to the (next) intersection (T-intersection or light or corner) (with 'something')" or "Head straight to the (next) intersection (T-intersection or light or corner) (with 'something')", completion can be directly determined if "Intersection Information" (note that it is not the 'Landmark Information' mentioned after 'with' in the task) is observed in the "Records of decision-making and observation information during the Task". Only when 'Intersection Information' is observed in "Records of decision-making and observation information during the Task" is it considered that the intersection has been reached.
+8. For the tasks "Go (pass) through an intersection (T-intersection or light or corner) (with 'something')", 'Intersection Information' must be observed in the "Records of decision-making and observation information during the Task" and perform a 'forward' action at a subsequent STEP for the task to be considered complete.
+9. For "go through" or "passing" tasks, and there is no mention of intersections (T-intersection or light or corner) in the "Current Task", if the 'landmark information' mentioned in "Current Task" is observed in "Records of decision-making and observation information during the Task" or "Observations at the current location", it is straightforward to determine that the task has been completed. Due to visual error, if "Records of decision-making and observation information during the Task" contains a high number of "forward" actions, it can also be judged that the task is completed (The observed 'Intersection Information' will be explicitly told to you in the "Records of decision-making and observation information during the Task", and it is never possible to guess that an intersection or light has been passed based on the "Records of decision-making and observation information during the Task").
+10. For the "Current Task" related to the type of road section, such as "Walk underneath the overpass", instead of only relying on the 'Intersection information', it is necessary to observe the corresponding road section information (e.g., overpass) in the "Records of decision-making and observation information during the Task" and "Observations at the current location" to determine whether the task is completed or not.
+11. The description of the orientation of 'Landmark Information' in "Records of decision-making and observation information during the Task" cannot indicate a turn-action, nor can it be used as 'Intersection Information' to determine if the task is completed.
+12. For tasks like "Head down the block" that do not mention intersection or light, as long as the "Records of decision-making and observation information during the Task" have "forward" actions, the task will be judged as complete.
+13. Your answer must be in the following json format <"reason": "<basis for judgment>", "answer": "<yes or no>">
+
+### Current Task ###
+Task {}
+
+### Records of decision-making and observation information during the Task ###
+{}
+
+### Observations at the current location ###
+Observations in the left rear direction:
+{}
+Observations in the left direction:
+{}
+Observations in the left front direction:
+{}
+Observations directly front:
+{}
+Observations in the right front direction:
+{}
+Observations in the right direction:
+{}
+Observations in the right rear direction:
+{}
+Observations directly rear:
+{}

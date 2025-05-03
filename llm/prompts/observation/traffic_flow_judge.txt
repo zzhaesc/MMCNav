@@ -1,0 +1,5 @@
+### Task ###
+According to the two pictures to judge the current driving direction is aligned with the flow of the traffic or aligned against the flow of the traffic. The first picture is the current positive driving direction, if this picture is difficult to judge the flow of the traffic at the intersection, then you can judge according to the second picture; the second picture is the rear view of the current traveling direction, so the real flow of the traffic should be opposite to the second picture.
+Your Answer must be strictly formatted as follows: "You are aligned with/against the flow of the traffic.".
+
+### Answer ###

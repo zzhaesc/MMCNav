@@ -1,0 +1,6 @@
+Task:
+Select the option that matches the question!
+Question:
+Which of the following landmarks in this picture can be observed with a high degree of confidence, and if none of the options can be observed please select "None of above"?
+Choices:
+{}

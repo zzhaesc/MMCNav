@@ -1,0 +1,301 @@
+{
+  "opts": {
+    "datasets_dir": "./datasets",
+    "dataset_name": "touchdown",
+    "split": "dev",
+    "scenario": "unseen",
+    "map_dir": "./datasets/planform",
+    "image_dir": "./datasets/touchdown/touchdown_manhattan_2022",
+    "image": "llava-OV",
+    "observation_file": "observation_llava-OV.json",
+    "landmarks_name": "gpt3_5shot",
+    "visual_model_path": "./LLaVA/llava-OV-7b",
+    "model_name": "gpt-4o",
+    "api_key": "sk-Kaam1oBUPMTt3gV9dvqUcgBeuyaajHsLQWFRIBtwhIVdsQyM",
+    "num_instances": 1,
+    "max_tokens": 512,
+    "temperature": 0,
+    "max_steps": 50,
+    "output_dir": "./outputs",
+    "seed": 1
+  },
+  "instances": {
+    "4754": {
+      "idx": "4754",
+      "navigation_text": "Turn so that the trees are to your left. At the first intersection, turn left and stop. ",
+      "navigation_task": {
+        "1": "1. Turn so that the trees are to your left  ",
+        "2": "2. Go to the first intersection  ",
+        "3": "3. Turn left  ",
+        "4": "4. Stop"
+      },
+      "start_heading": 10.0,
+      "gold_actions": [
+        "init",
+        "turn_around",
+        "forward",
+        "forward",
+        "forward",
+        "forward",
+        "forward",
+        "forward",
+        "forward",
+        "left",
+        "forward",
+        "stop"
+      ],
+      "gold_states": [
+        [
+          "pGD9GXAZChwjjq_1LMYp-Q",
+          10
+        ],
+        [
+          "pGD9GXAZChwjjq_1LMYp-Q",
+          178
+        ],
+        [
+          "Ux3RvP7kPkhD9DBivH65FQ",
+          178
+        ],
+        [
+          "34_0Yr9ujIpitozCtoINmA",
+          175
+        ],
+        [
+          "rjWrAQRhvs0XF2xnvkHdIA",
+          173
+        ],
+        [
+          "zO_VJg484eDnvCzqsk3ibg",
+          172
+        ],
+        [
+          "Tmii6wi4vSeAJw0wqYrpQA",
+          169
+        ],
+        [
+          "37LEJ9rnurcwVsFqAlh1cQ",
+          168
+        ],
+        [
+          "yuNSvFX_CSda5FAue4k1Zg",
+          169
+        ],
+        [
+          "yuNSvFX_CSda5FAue4k1Zg",
+          76
+        ],
+        [
+          "9EbO37MRG3_KnPvsCeDR8g",
+          76
+        ],
+        [
+          "9EbO37MRG3_KnPvsCeDR8g",
+          76
+        ]
+      ],
+      "gold_pano_path": [
+        "pGD9GXAZChwjjq_1LMYp-Q",
+        "Ux3RvP7kPkhD9DBivH65FQ",
+        "34_0Yr9ujIpitozCtoINmA",
+        "rjWrAQRhvs0XF2xnvkHdIA",
+        "zO_VJg484eDnvCzqsk3ibg",
+        "Tmii6wi4vSeAJw0wqYrpQA",
+        "37LEJ9rnurcwVsFqAlh1cQ",
+        "yuNSvFX_CSda5FAue4k1Zg",
+        "9EbO37MRG3_KnPvsCeDR8g"
+      ],
+      "gold_navigation_lines": [
+        "1. turn_around",
+        "2. forward",
+        "3. forward",
+        "4. forward",
+        "5. forward",
+        "6. forward",
+        "7. forward",
+        "8. forward",
+        "Intersection Information: There is a 3-way intersection. ",
+        "9. left",
+        "10. forward",
+        "Intersection Information: There is a 4-way intersection. ",
+        "11. stop"
+      ],
+      "gold_is_actions": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        false,
+        true,
+        true,
+        false,
+        true
+      ],
+      "agent_actions": [
+        "init",
+        "forward",
+        "turn_around",
+        "forward",
+        "forward",
+        "forward",
+        "forward",
+        "forward",
+        "forward",
+        "forward",
+        "forward",
+        "left",
+        "stop"
+      ],
+      "agent_states": [
+        [
+          "pGD9GXAZChwjjq_1LMYp-Q",
+          10
+        ],
+        [
+          "YjBIdgJMlf7f1OywiHSaYg",
+          10
+        ],
+        [
+          "YjBIdgJMlf7f1OywiHSaYg",
+          190
+        ],
+        [
+          "pGD9GXAZChwjjq_1LMYp-Q",
+          190
+        ],
+        [
+          "Ux3RvP7kPkhD9DBivH65FQ",
+          178
+        ],
+        [
+          "34_0Yr9ujIpitozCtoINmA",
+          175
+        ],
+        [
+          "rjWrAQRhvs0XF2xnvkHdIA",
+          173
+        ],
+        [
+          "zO_VJg484eDnvCzqsk3ibg",
+          172
+        ],
+        [
+          "Tmii6wi4vSeAJw0wqYrpQA",
+          169
+        ],
+        [
+          "37LEJ9rnurcwVsFqAlh1cQ",
+          168
+        ],
+        [
+          "yuNSvFX_CSda5FAue4k1Zg",
+          169
+        ],
+        [
+          "yuNSvFX_CSda5FAue4k1Zg",
+          76
+        ],
+        [
+          "yuNSvFX_CSda5FAue4k1Zg",
+          76
+        ]
+      ],
+      "agent_pano_path": [
+        "pGD9GXAZChwjjq_1LMYp-Q",
+        "YjBIdgJMlf7f1OywiHSaYg",
+        "pGD9GXAZChwjjq_1LMYp-Q",
+        "Ux3RvP7kPkhD9DBivH65FQ",
+        "34_0Yr9ujIpitozCtoINmA",
+        "rjWrAQRhvs0XF2xnvkHdIA",
+        "zO_VJg484eDnvCzqsk3ibg",
+        "Tmii6wi4vSeAJw0wqYrpQA",
+        "37LEJ9rnurcwVsFqAlh1cQ",
+        "yuNSvFX_CSda5FAue4k1Zg"
+      ],
+      "agent_navigation_lines": [
+        "You are aligned against the flow of the traffic.Landmark Information: trees behind. ",
+        "step 1. forward",
+        "step 2. turn_around",
+        "Landmark Information: trees on your left. ",
+        "step 3. forward",
+        "Landmark Information: trees on your left. ",
+        "step 4. forward",
+        "Landmark Information: trees on your left. ",
+        "step 5. forward",
+        "Landmark Information: trees on your left. ",
+        "step 6. forward",
+        "Landmark Information: trees on your left. ",
+        "step 7. forward",
+        "Landmark Information: trees on your left. ",
+        "step 8. forward",
+        "Landmark Information: trees on your left. ",
+        "step 9. forward",
+        "Landmark Information: trees on your left. ",
+        "step 10. forward",
+        "Intersection Information: There is a 3-way intersection. Landmark Information: trees on your left. ",
+        "step 11. left",
+        "Landmark Information: trees ahead. ",
+        "step 12. stop",
+        "Landmark Information: trees ahead. "
+      ],
+      "agent_is_actions": [
+        false,
+        true,
+        true,
+        false,
+        true,
+        false,
+        true,
+        false,
+        true,
+        false,
+        true,
+        false,
+        true,
+        false,
+        true,
+        false,
+        true,
+        false,
+        true,
+        false,
+        true,
+        false,
+        true,
+        false
+      ],
+      "subtask_judge": [
+        false,
+        true,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        true,
+        true,
+        true
+      ],
+      "metrics": {
+        "tc": 1,
+        "spd": 1,
+        "kpa": 0.5,
+        "nDTW": 0.8007374029168081
+      }
+    }
+  },
+  "metrics": {
+    "correct": 1,
+    "tc": 100.0,
+    "spd": 1.0,
+    "sed": 50.0,
+    "nDTW": 80.07,
+    "total_token": 0
+  }
+}

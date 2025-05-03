@@ -1,0 +1,28 @@
+### Task Description ###
+Given navigation instruction, Records of decision-making and observation information during the navigation, a Exploration Map, the 'top n' error points and basis for causing the navigation to go wrong, and a description of the observations in the state where each error point was located. You need to validate and find the error point from the 'top n' errors that actually caused the navigation error.
+
+### Note ###
+The following principles must be followed in making judgments:
+1. In the Exploration Map, gray=roads, white=unexplored, blue dots=landmarks observed during explorationthe, names of landmarks corresponding to the numbers next to the blue dots are communicated in "Map Legend" (markers are only approximate and not accurate, they only indicate that the landmark can be observed here), red line=navigational route.
+2. The Exploration Map is drawn based on "Records of decision-making and observation information during the navigation", which simplifies the redundant "landmark information" during navigation and retains only approximate landmark locations. The 'Landmark Information' may be inaccurate, but the representation of intersections ('Intersection' field, multiple extensions of a road) is accurate.
+3. You must think carefully and combine all the information to determine which of the "'top n' error points and basis for causing the navigation to go wrong and a description of the observations" is the true error point (The real error must be in the "'top n' error points and basis for causing the navigation to go wrong and a description of the observations", from which you have to pick out the real error and not find another one!).
+4. T-intersection is equivalent to a 3-way intersection, and an intersection is equivalent to all types of intersections. Intersections are equipped with traffic lights, so the description of 'light' in the "Navigation Task" is equivalent to an Intersection.
+5. Step by step, correlate the "Records of decision-making and observation information during the navigation" and the Exploration Map and then carefully combine the observations to identify the actions that are really causing the errors.
+6. When the number of intersections in the "Records of decision-making and observation information during the navigation" and the Exploration Map and the actions taken after the intersections are generally consistent with the descriptions in the "Navigation Task", it is straight forward to determine that the final "stop" action was the real error.
+7. If the error is that the stop action was performed too soon, it is necessary to suggest at the point of error that "The forward action should be executed here."; If the error is that the stop action was performed too late and crossed the destination, it is necessary to suggest at the point of error that "The stop action should be executed here.". If action step after Intersection is the real error, then follow the corresponding content in the 'Navigation Task' to suggest the execution of the action.
+8. Your answer must be strictly formatted as follows, with no extra sentences:
+"advice": "Modification advice", "answer": "step n. <real error action>".
+
+### Navigation Task ###
+{}
+
+### Records of decision-making and observation information during the navigation ###
+{}
+
+### 'top n' error points and basis for causing the navigation to go wrong and a description of the observations ###
+{}
+
+### Map Legend ###
+{}
+
+### Answer ###

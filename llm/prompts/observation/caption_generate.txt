@@ -1,0 +1,5 @@
+### Task ###
+Describe in detail, in a paragraph as brief as possible, the landmarks observed in the Street View image. Focus on describing the buildings (need to guess what the buildings are), signs (need to determine what the signs are), and text (need to explain what the text is) on the street; do not describe the weather, vehicles on the road, or pedestrians.
+Your Answer must be strictly formatted as follows: "your description".
+
+###Answer###

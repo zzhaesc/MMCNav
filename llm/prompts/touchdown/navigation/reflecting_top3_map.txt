@@ -1,0 +1,198 @@
+### Task Description ###
+Given Navigation Task, Records of decision-making and observation information during the navigation and a Exploration Map. Deeply understand Navigation Task and identify up to 3 actions that could lead to a navigational error.
+
+### Note ###
+The following principles must be followed in making judgments:
+1. In the Exploration Map, gray=roads, white=unexplored, blue dots=landmarks observed during explorationthe, names of landmarks corresponding to the numbers are indicated in "Map Legend" (if they are not in the map, they were not observed;markers are only approximate and not accurate, they only indicate that the landmark can be observed here), red line=navigational route.
+2. The Exploration Map is drawn based on "Records of decision-making and observation information during the navigation", which simplifies the redundant "landmark information" during navigation and retains only approximate landmark locations. The 'Landmark Information' may be inaccurate, but the representation of intersections ('Intersection' field, multiple extensions of a road) is accurate.
+3. T-intersection is equivalent to a 3-way intersection, and an intersection is equivalent to all types of intersections. Intersections are equipped with traffic lights, so the description of 'light' in the "Navigation Task" is equivalent to an Intersection.
+4. Due to errors in visual observation, sometimes "Records of decision-making and observation information during the navigation" do not provide accurate 'Landmark Information' (i.e., there was originally a relevant landmark here but it was not observed due to errors, resulting in the relevant 'Landmark Information' not being written here in  "Records of decision-making and observation information during the navigation"), but 'Intersection Information' was determined to be correct.
+5. Step by step, correlate the "Records of decision-making and observation information during the navigation" and the Exploration Map with the "Navigation Task" to identify the action that causes an error.
+6. There are four main types of errors, one is when there are two turn actions after some "intersection information" and the second turn action is the wrong action. The other is when the final "stop" action stops too soon, when "stop" is wrong. Another is that the "stop" is executed too late, causing it to cross the destination, and the action at the position where it should have stopped is wrong. The fourth type of error, as in Example 3, is where the point of error is the first ACTION.
+7. When looking for errors, first check the number of 'Intersection Information' in the "Records of decision-making and observation information during the navigation" and the Exploration Map, and whether the subsequent action is consistent with the descriptions in the "Navigation Task" (regardless of whether the types of intersections match, only corresponding to the number of intersections).
+8. Error actions should be judged primarily on the basis of 'Intersection Information'. When judging an error to be a turning action, carefully combine it with the course of the previous task and select it as an error point only when particularly sure.
+9. If the stop is too early, then the error is the last "stop" action, and you need to suggest a few steps forward; if the stop is too late, then you need to find the correct stopping place from the action before the "stop" (within a range of 8 steps, not too far forward), and then treat it as an error action, and suggest to stop here.
+10. When the number of intersections in the "Records of decision-making and observation information during the navigation" and the Exploration Map and the actions taken after the intersections are exactly the same as the descriptions in the "Navigation Task", and the 'Landmark Information' in "Records of decision-making and observation information during the navigation" is generally consistent with that in the Navigation Task, it is straightforward to determine that it is an error to stop at the wrong position. The position only needs to be further judged whether it was stopped early or late, without looking for other errors. (If it's hard to find what went wrong, you can just judge it as STOP too early)
+11. After an intersection, there can only be one turning action. If two consecutive turning actions are found after a certain intersection, it can be determined that the second turning action is the erroneous action, and it's suggested to correct it to "forward". When the number of steps exceeds 50 then there is a high probability that the stop is too late, and you need to carefully proofread the content of the descriptions of the last two tasks and the "Records of decision-making and observation information during the navigation" to select the action that may have been wrong before "stop" (not too far away) as the point of error.
+12. If the observation information in the "Record of Decision and Observation Information During Navigation" deviates significantly from the "Navigation Task" and the first action does not match the requirements of the first task, indicate that the first action is an incorrect action. Suggestions for modification are given, as required by the task 1.
+13. If there are fewer than three possible errors, simply provide the ones that exist without forcing three to be made up so as not to mislead subsequent operations. If there are more than three possible errors, provide the three most likely errors.
+14. Your answer must be written strictly in the format, with no extra sentences:
+"reason": "Judgmental basis", "top n": "Action sequence that could lead to a navigation error";
+
+### Example 1 ###
+Navigation Task:
+1. Follow the flow of traffic
+2. Go to the first intersection
+3. Turn right
+4. Go to the next intersection
+5. Turn left
+6. Stop, there will be a yellow pedestrian sign on your right
+
+Records of decision-making and observation information during the navigation:
+You are aligned against the flow of the traffic. 
+step 1. turn_around
+step 2. forward
+step 3. forward
+Landmark Information: An overpass on your left. 
+step 4. forward
+Landmark Information: An overpass on your left. 
+step 5. forward
+Intersection Information: There is a 4-way intersection. 
+step 6. right
+step 7. right
+step 8. forward
+step 9. forward
+step 10. forward
+step 11. forward
+step 12. forward
+Intersection Information: There is a 3-way intersection. 
+step 13. left
+step 14. forward
+step 15. forward
+step 16. forward
+Intersection Information: There is a 4-way intersection. 
+step 17. forward
+step 18. forward
+step 19. forward
+step 20. forward
+step 21. forward
+step 22. forward
+step 23. forward
+step 24. forward
+step 25. forward
+Intersection Information: There is a 3-way intersection. 
+step 26. forward
+step 27. forward
+step 28. forward
+step 29. forward
+step 30. stop
+
+answer:
+"reason": "A number of consecutive 'right' action are made, which does not meet the requirements, the 'forward' action should be executed here.", "top 1": "step 7. right";
+"reason": "A stop action was performed too late. An attempt should be made to stop here.", " top 2": "step 26. forward";
+"reason": "A stop action was performed too soon. Should try to take a few more steps forward.", "top 3": "step 30. stop";
+
+
+### Example 2 ###
+Navigation Task:
+1. Rotate so that the red storefront are to your left and move ahead against traffic
+2. Go to the intersection
+3. Turn left
+4. The black iron fence and park is now to your right 
+5. Go straight ahead to the intersection
+6. Turn right
+7. Another short block to travel down , the park is still to your right
+8. Head to the traffic light
+9. Turn Left
+10. There is now a school to your left and a builing with many windows to the right side
+11. TRavel ahead towards the traffic light
+12. Stop just short of the intersection and Rotate to the right. There should be two boxes on the sidewalk, directly in front of you one yellow and one red
+
+Records of decision-making and observation information during the navigation:
+You are aligned against the flow of the traffic. 
+step 1. forward
+step 2. forward
+step 3. forward
+Intersection Information: There is a 4-way intersection. 
+step 4. left
+step 5. forward
+step 6. forward
+Landmark Information: A park on your Right. 
+step 7. forward
+Landmark Information: A park on your Right. 
+step 8. forward
+Landmark Information: A park on your Right. 
+step 9. forward
+step 10. forward
+Intersection Information: There is a 4-way intersection. 
+step 11. right
+step 12. forward
+step 13. forward
+step 14. forward
+step 15. forward
+Landmark Information: A park on your Right. 
+step 16. forward
+step 17. forward
+Intersection Information: There is a 3-way intersection. 
+step 18. left
+step 19. forward
+step 20. forward
+step 21. forward
+step 22. forward
+step 23. forward
+step 24. forward
+step 25. forward
+Intersection Information: There is a 3-way intersection. 
+step 26. forward
+step 27. forward
+step 28. stop
+
+answer:
+"reason": "A stop action was performed too soon. Should try to take a few more steps forward.", "top 1": "28. stop";
+
+
+### Example 3 ###
+Navigation Task:
+1. Turn yourself so that the intersection is right in front of you
+2. Go to the intersection
+3. Turn right
+4. Orange and white barriers on the left
+5. Go to the intersection
+6. Turn right
+7. A building with red doors on the right
+8. You will pass a red and black brick store front on the right
+9. Stop, then some orange and white barriers on the right and then on the left will be orange barriers
+
+Records of decision-making and observation information during the navigation:
+You are aligned with the flow of the traffic. 
+step 1. forward
+step 2. forward
+step 3. forward
+Intersection Information: There is a 4-way intersection. 
+step 4. right
+step 5. forward
+step 6. forward
+step 7. forward
+step 8. forward
+step 9. forward
+step 10. forward
+step 11. forward
+step 12. forward
+step 13. forward
+step 14. forward
+step 15. forward
+step 16. forward
+step 17. forward
+step 18. forward
+step 19. forward
+step 20. forward
+step 21. forward
+step 22. forward
+Intersection Information: There is a 3-way intersection. 
+step 23. right
+step 24. forward
+step 25. forward
+step 26. forward
+step 27. forward
+step 28. forward
+step 29. forward
+step 30. forward
+step 31. forward
+step 32. forward
+step 33. forward
+step 34. forward
+step 35. forward
+step 36. stop
+
+answer:
+"advice": "Wrong orientation, the 'turn_around' action should be executed here.", "answer": "1. forward".
+"reason": "A stop action was performed too late. An attempt should be made to stop here.", " top 2": "step 30. forward";
+
+### Navigation Task ###
+{}
+
+### Records of decision-making and observation information during the navigation ###
+{}
+
+### Map Legend ###
+{}

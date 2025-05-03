@@ -1,0 +1,67 @@
+[Task Description]
+Split navigation descriptions into multi-step navigation instructions without changing the original intent.
+
+[Note]
+1. Think step by step and process each sentence of the navigation description.
+2. Split the description of the number of intersections and the number of lights, and the split must be consistent with the original.
+3. retain landmark and action (left, right, stop, go, etc.) descriptions in navigation descriptions, and sentences about Action do not need to be split.
+4. Make simplifications to the split sentences, but the original meaning and key information cannot be modified.
+5. Sentences related to intersections (or lights) or similar meanings should not be simplified.
+6. For the first sentence that contains information about traffic flow, if it needs to be split, the traffic flow information must be kept in the first sentence.
+7. Split sentences like "Turn right (or left) at the intersection (or light)" or "Go to the next intersection (or light), turn right (or left)" into "Go to the intersection (or light)" and "Turn right (or left)".
+8. If "Turn left(or right)" is followed by another "Turn left(or right)", you need to add a "Take one step" in the middle.
+9. Navigation descriptions related to "turn right (or left)" or "turn around" cannot be simplified or deleted, as this would result in losing important aspects of the original instructions.
+10. The split sentences must only have the last sentence related to "stop," and no other sentences should follow "stop". Modify any "stop" content that is not the last sentence to "go to..." For example, change "stop in the intersection and turn right" to "Go to the intersection" and "Turn right".
+11. The last step must be "Stop", if not please add extra.
+12. You only need to answer sentences that are split and processed and do not need to include a thought process.
+
+[Example]
+For the navigation descriptions "Turn so the scaffolding is on your left and go with the flow of traffic to the next corner and turn right. When you turn there are orange cones in the road to go through on both sides. Keep going, through the first intersection but turn right at the second one. When you turn a large red brick building with a black fence is on your left. Go past that building, past the chain link fence on the left that's after it, continue past the flags on the right, until you are just starting in front of the scaffolding on the right and left. On the left are two trees, one where the scaffolding on the left starts, then the second one just down from it."
+The first sentence can be split into three steps. The second sentence could be simplified. The third sentence can be split into three steps. The fourth sentence could be simplified. The fifth sentence can be split into two steps. The last sentence does not have "stop", add "stop".
+==>
+1. Turn so the scaffolding is on your left, go with the flow of traffic
+2. Go to the next corner
+3. Turn right
+4. There are orange cones in the road to go through on both sides 
+5. Go through an intersection
+6. Go to the next intersection
+7. Turn right
+8. A large red brick building with a black fence is on your left
+9. Go past the chain link fence on the left
+10. Go past the flags on the right, until you are just starting in front of the scaffolding on the right and left
+11. Stop, on the left are two trees, one where the scaffolding on the left starts, then the second one just down from it
+
+For the navigation descriptions "Orient yourself so that you are moving in the same direction as traffic. Go straight through 3 intersections. Keep moving forward, after the 3rd intersection, you should see a signs for a store with a white background and red dots as well as a red and white bullseye target. Continue going straight past this store and at the next intersection, turn left. Go through one intersection and stop just after the wall on your left with the purple zig zag patterns"
+The first sentence does not need to be split. The second sentence contains the phrase "3 intersection", which can be split into three steps. The third sentence could be simplified. The fourth sentence combines the reference to the store into the fifth step, and the rest of the sentence is split into two steps. The fifth sentence is split into two steps.
+==>
+1. Orient yourself so that you are moving in the same direction as traffic
+2. Go straight through the next intersection
+3. Go straight through the next intersection
+4. Go straight through the next intersection
+5. You should see a signs for a store with a white background and red dots as well as a red and white bullseye target, go straight past this store
+6. Go to the next intersection
+7. Turn left
+8. Go through one intersection
+9. Stop just after the wall on your left with the purple zig zag patterns
+
+For the navigation descriptions "Orient yourself with the flow of traffic, with the armored truck on your left, go straight to the next intersection. Go to the intersection and make a left, then take an immediate right. You should see blue bikes on your right. Follow this down and make another left at the first intersection. Following this left, stop at the next intersection, and take one step straight. You should see a smokestack with construction colors on it."
+The first sentence should be split into two steps. The second sentence should be split into three steps, and since there are two consecutive turns, add "Take one step" in the middle. The third sentence does not need to be split. The fourth sentence should be split into two steps. The fifth sentence can be simplified to two steps and there is an action after the "stop" in it, so it is not the final "stop" action should be replaced with "Go to the next intersection". The last sentence does not have "stop", add "stop".
+==>
+1. Orient yourself with the flow of traffic, with the armored truck on your left
+2. Go straight to the next intersection
+3. Go to the intersection
+4. Make a left
+5. Take one step
+6. Take a right
+7. You should see blue bikes on your right
+8. Follow this down go to the next intersection
+9. Make a left
+10. Go to the next intersection
+11. Take one step straight
+12. Stop. you should see a smokestack with construction colors on it
+
+[Navigation Descriptions]
+"{}"
+
+[Output]
+The navigation steps you split:

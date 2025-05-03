@@ -1,0 +1,70 @@
+[Task Description]
+Modify subtask as required.
+
+[Note]
+1. Think step by step and process each sentence of the task.
+2. Split sentences like 'Turn right(left) at the light(intersection)' and 'Go to the light(or intersection), turn right(left) 'into 'Go to the light(or intersection)' and 'Turn right(left)'.
+3. Ensure that the number about intersections in all tasks after the split is the same as before the split.
+4. The first sentence stays as it is.
+5. Capitalise the beginning of each sentence and do not need a full stop at the end. If the order is wrong, help fix it.
+6. Simplify the task description and remove redundant content. The information related to "key landmarks", "intersection (corner)", or "light" cannot be deleted or altered, and ensure that the last sentence refers to the "stop" task.
+7. Standardize the expression by changing terms like "right (or left) side street" or "left (or right) turn" to "intersection". For example, "Go to the next left side street" should be modified to "Go to the next intersection".
+8. Standardize the expression by changing terms like "ignore" and other phrases indicating crossing to "Go through". For example, "Ignore the left turn" should be modified to "Go through the intersection", and "Ignore the light" should be changed to "Go through the intersection".
+9. When simplifying, do not modify "Key Landmarks," "intersection," or "light," as well as action-related content (such as forward, turn left, turn right, turn around). Other unrelated descriptions, such as "sidestep to your left," can be optimized and removed.
+10. You only need to answer sentences that are split and processed and do not need to include a thought process.
+
+[Example]
+Example 1:
+1. Turn so the green wall is to your right
+2. Go through the intersection right in front of you
+3. Go to the next intersection, turn right
+4. A median with short black, maybe brown, fencing is to your left and trees are in it.
+4. turn left at the intersection
+6. Stop before you get to the next intersection, there will be a line of bikes parked on the right
+==>
+1. Turn so the green wall is to your right
+2. Go through the intersection right in front of you
+3. Go to the next intersection
+4. Turn right
+5. A median with short black, maybe brown, fencing is to your left and trees are in it
+6. Go to the first intersection
+7. Turn left
+8. Stop before you get to the next intersection, there will be a line of bikes parked on the right
+
+Example 2:
+1. Orient yourself in the same direction as the parked vehicles
+2. Move forward into the center of the three-way intersection with red benches in the center, turn right
+4. Walk forward on the path with a green bicycle lane and a median with trees and benches to your left side
+5. Pass many little white poles with two gray stripes on your left side
+6. Reach the next four-way intersection
+7. Turn right
+8. Walk forward with a bright blue building to your right side and a green bicycle lane to your left side
+9. Reach the next four-way intersection
+10. Turn right
+11. Walk forward with a brown building with a red door to your right side and a brown building with a black awning and colorful orange and white signs with photographs of food on them to your left side
+12. Pass a black fence with a parking lot, a blue basketball hoop, and a very colorful painted wall on your left side
+13. Stop when you are just beyond but still nearby the open door near some black bins with white, red, and green graffiti
+==>
+1. Orient yourself in the same direction as the parked vehicles
+2. Move forward into the center of the three-way intersection with red benches in the center
+3. Turn right
+4. Walk forward on the path with a green bicycle lane and a median with trees and benches to your left side
+5. Pass many little white poles with two gray stripes on your left side
+6. Reach the next four-way intersection
+7. Turn right
+8. Walk forward with a bright blue building to your right side and a green bicycle lane to your left side
+9. Reach the next four-way intersection
+10. Turn right
+11. Walk forward with a brown building with a red door to your right side and a brown building with a black awning and colorful orange and white signs with photographs of food on them to your left side
+12. Pass a black fence with a parking lot, a blue basketball hoop, and a very colorful painted wall on your left side
+13. Stop when you are just beyond but still nearby the open door near some black bins with white, red, and green graffiti
+
+
+[Task]
+"{}"
+
+[Key Landmarks]
+{}
+
+[Output]
+The task steps you modify:

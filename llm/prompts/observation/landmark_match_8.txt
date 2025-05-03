@@ -1,0 +1,83 @@
+### Task ###
+Provide a description of the eight directions of observation of your current location, and the key landmarks or text to be judged. You are to determine which direction of observation description the given landmark is on (left or left front or front or right front or right) based on the associated building and text in the description of the observation in each direction. Answer whichever direction of observation the relevant buildings and text are on, or 'No' if they are not present. Observations of text can be erroneous due to visual errors, so you can determine the presence of text if it is roughly similar (pedestrians and weather in the descriptions, etc., are not relevant to landmark).
+Your Answer must be strictly formatted as follows: 
+"given key landmarks": "location or no".
+
+### Example 1 ###
+Key Landmarks:
+Starbucks
+a hotel
+
+Observations:
+Observations in the left rear direction:
+The image depicts a city square with an orange and gray kiosk, surrounded by greenery and trees. In the background, there are tall buildings, including one with a distinctive dark facade. The sky is overcast, suggesting a cloudy day.
+Observations in the left: 
+the image depicts a city park with a variety of buildings in the background. There is a large, multi-story building with a white facade and numerous windows, which could be an apartment or office building. Adjacent to it is another structure that appears to be a smaller, possibly residential building with a similar architectural style. In the foreground, there is a kiosk with an orange base and a gray top, which might serve as an information booth or a small shop. The park itself has several metal tables and chairs arranged for visitors to sit and relax. There are also some potted plants and trees scattered throughout the area, providing greenery and shade. The presence of these elements suggests that this is a public space designed for leisure and recreation within an urban environment.
+Observations in the left front: 
+the image depicts a bustling urban scene with several tall buildings in the background. The architecture of these buildings varies, with some featuring modern glass facades and others displaying more traditional designs with numerous windows and balconies. In the foreground, there is a wide pedestrian area lined with tables and chairs, suggesting the presence of an outdoor dining or gathering space. There are also large planters with greenery, adding a touch of nature to the urban environment. The street is busy with pedestrians walking along the sidewalk, and traffic lights indicate a controlled intersection. Based on the presence of these elements, it can be inferred that this location is likely a commercial or business district within a city, where people come to dine, work, or conduct various activities.
+Observations directly front: 
+the image depicts a bustling urban street scene with a focus on commercial buildings and street vendors. There are several storefronts visible, including one with the name "STARBUCKS" prominently displayed above the entrance. The architecture of the buildings suggests a mix of modern and possibly historic styles, with large windows and a stone facade. In front of these buildings, there are multiple street vendors with colorful umbrellas, indicating a lively marketplace or food court area. The presence of pedestrians walking by and engaging with the vendors suggests that this is a popular spot for locals and tourists alike. The overall atmosphere appears to be vibrant and active, typical of a busy city center.
+Observations in the right front: 
+The image depicts a bustling urban street scene with a focus on commercial buildings and street vendors. There are several storefronts visible, including one with the name "ARTMUSEUM" prominently displayed above the entrance. The architecture of the buildings suggests a mix of modern and possibly historic styles, with large windows and a stone facade. In front of these buildings, there are multiple street vendors with colorful umbrellas, indicating a lively marketplace or food court area. The presence of pedestrians walking by and engaging with the vendors suggests that this is a popular spot for locals and tourists alike.
+Observations in the right: 
+The image depicts a busy urban scene centered around a subway entrance. The subway station is marked by a green metal fence with the word "Subway" prominently displayed on it, indicating its function as an underground transit point. Adjacent to the subway entrance are large, imposing buildings with classical architectural elements such as columns and arches. One of the buildings has a sign that reads "marriott", suggesting it is a hotel. Another building features a sign with the name "La Vara", which could be a restaurant or another commercial establishment. The presence of pedestrians, cars, and traffic lights suggests this area is a bustling part of the city, likely a commercial or business district. The combination of retail stores, hotels, and public transportation points to a well-developed urban environment designed for both leisure and business activities.
+Observations in the right rear direction:
+The image depicts a bustling urban street scene with a prominent building featuring large windows and a sign that reads "LUNA." In front of the building, there are several food carts with colorful umbrellas, one of which has a sign advertising "BAGELS" and another displaying a price of "$1.99." The street is lined with various storefronts, including one with a sign that says "TATTOO."
+Observations directly rear:
+The image features a street scene with a prominent building that has the name "Marimekko" displayed on its facade. The architecture of the building suggests it might be a commercial establishment, possibly a store or office for the Marimekko brand, which is known for its design and fashion products. In front of the building, there is a subway entrance with a green fence and a sign that reads "Subway." Additionally, there is a food cart with an umbrella to the left side of the image, indicating a bustling urban environment where people can grab quick bites while on the go.
+(Thinking Process: There were no buildings or text that functioned similarly to 'a hotel' in the observations, so the answer was "no". The "STARBUCKS" is observed in the "Observations directly front", so the answer is "front")
+=>
+Starbucks: front
+a hotel: no
+
+### Example 2 ###
+Key Landmarks:
+a park
+McDonald's
+P.C. Richard & Son Electronics
+
+Observations:
+Observations in the left rear direction:
+The image depicts a street scene with several tall buildings, likely residential or mixed-use, in the background. The architecture suggests an urban environment, possibly in a city like New York. In the foreground, there is a black SUV parked on the side of the road. To the right, there is a chain-link fence enclosing what appears to be a construction site or a restricted area, with a red dumpster visible behind it. There are no distinct signs or text that can be clearly read from this angle. The sky is overcast, and the overall atmosphere seems calm without any immediate activity.
+Observations in the left: 
+the image depicts a bustling urban street scene with a variety of buildings and signs. In the foreground, there is a crosswalk with pedestrians waiting to cross. To the left, there's a building with a red awning and a sign that reads "WAXING EYELASH EXTENSIONS." Adjacent to it, another building has a large window displaying a black and white patterned facade. On the right side of the image, there's a street corner with a traffic light showing a red hand for pedestrians. A "No Left Turn" sign is visible above the traffic light. There are also bicycles in motion on the street, indicating an active bike lane. The overall atmosphere suggests a busy city environment with commercial establishments and pedestrian activity.
+Observations in the left front: 
+the image depicts a bustling urban street scene with multiple buildings. The architecture suggests a mix of residential and commercial structures, with the presence of fire escapes indicating older, possibly historic buildings. There is a P.C. Richerd & Son Electrenics, the storefront is under construction with scaffolding. The street is busy with pedestrians crossing at a crosswalk, and there are traffic lights controlling the flow of vehicles. A cyclist is also visible, indicating that the area supports various modes of transportation. The overall atmosphere suggests a typical day in a densely populated city neighborhood.
+Observations directly front: 
+the image depicts a bustling city street with tall buildings on both sides. The architecture of the buildings varies, with some featuring modern glass facades and others displaying more traditional brickwork. There are numerous pedestrians walking along the sidewalks, and traffic is flowing in both directions. The street is lined with various street signs and traffic lights, indicating a well-regulated urban environment. The presence of construction equipment suggests ongoing development or maintenance work in the area. The overall scene conveys a sense of a busy metropolitan area with a mix of commercial and residential structures.
+Observations in the right front: 
+the image depicts a bustling city street scene at the intersection of 6th Avenue. The buildings are tall and appear to be commercial or office spaces, with large windows and signage that is not clearly legible. There is a green street sign indicating "6 AV" hanging above the intersection. The architecture suggests an urban environment, possibly in a downtown area. The presence of multiple vehicles, including cars and trucks, indicates heavy traffic. Pedestrians are visible on the sidewalks, some waiting to cross the street, suggesting a busy time of day. The overall atmosphere is one of a typical day in a busy metropolitan area.
+Observations in the right: 
+the image depicts a bustling urban scene with a prominent building labeled "BEST BUY" on the right side. The architecture of the building suggests it is a commercial establishment, likely an electronics retailer given the brand name. In front of the store, there are several pedestrians walking on the sidewalk, indicating a busy area possibly in a downtown or commercial district. To the left, there is another building with a sign that reads "ONE WAY," suggesting a one-way street or lane. The presence of traffic lights and street signs indicates regulated traffic flow. The overall setting appears to be a busy city street with a mix of pedestrian and vehicular activity.
+Observations in the right rear direction:
+The image depicts a bustling city street with tall buildings on either side. The architecture of the buildings suggests an urban environment, possibly in a historic district given the style of the buildings. There are traffic lights and street signs visible, indicating a well-regulated traffic system. The road has markings that include "ONLY" lanes, suggesting specific directions for traffic flow. The sky is overcast, and the overall atmosphere appears to be that of a typical day in a busy metropolitan area.
+Observations directly rear:
+The image depicts a bustling city scene with tall buildings, including one with a distinctive curved facade on the left. There is a large advertisement banner hanging from a building in the center-right of the image. The architecture suggests an urban environment, possibly in a major metropolitan area.
+(Thinking Process: There were no buildings or objects that functioned similarly to 'a park' and 'McDonald's' in the observations, so the answer was "no". On the left front observation, it can be clearly seen that "P.C. Richaerd & Son Electrenics" is similar to "P.C. Richard & Son Electronics", so it is judged to be present, and the answer is "left front".)
+=>
+a park: no
+McDonald's: no
+P.C. Richard & Son Electronics: left front
+
+### Key Landmarks ###
+{}
+
+### Observations ###
+Observations in the left rear direction:
+{}
+Observations in the left direction:
+{}
+Observations in the left front direction:
+{}
+Observations directly front:
+{}
+Observations in the right front direction:
+{}
+Observations in the right direction:
+{}
+Observations in the right rear direction:
+{}
+Observations directly rear:
+{}
+
+### Answer ###
