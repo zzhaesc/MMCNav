@@ -1,6 +1,0 @@
-Task:
-Select the option that matches the question!
-Question:
-Which of the following landmarks can be clearly identified with a high degree of confidence in the picture?
-Choices:
-{}
